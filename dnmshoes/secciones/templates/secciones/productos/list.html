@@ -1,0 +1,97 @@
+{% extends 'secciones/base.html' %}
+{% load static %}
+{% block title %}
+    {% if Categoria %}{{ Categoria.Nombre }} {% else %} Productos {% endif %}
+{% endblock %}
+
+{% block content %}
+<style>
+    .producto:hover{
+        -webkit-box-shadow: 0px 0px 20px -10px rgba(0,0,0,0.75);
+        -moz-box-shadow: 0px 0px 20px -10px rgba(0,0,0,0.75);
+        box-shadow: 0px 0px 20px -10px rgba(0,0,0,0.75);
+        z-index: 1;
+        background-color: white;
+    }
+</style>
+
+   <div class="container">
+      <div class="row justify-content-center" style="margin-top: 6%">
+
+          <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+              <div class="sidebar-module">
+                <h4>Categorias</h4>
+                <ol class="list-unstyled">
+                  <li {% if not categoria %} class="active"{% endif %}><a href="{% url 'secciones:product_list' %}">Todas</a></li>
+                {% for c in categorias %}
+    
+                  <li {% if categoria.slug == c.slug %} class="active"{% endif %}>
+                      <a href="{{ c.get_absolute_url }}">{{ c.Nombre }}</a>
+                  </li>
+                {% endfor %}
+                </ol>
+              </div>
+            </div><!-- /.blog-sidebar -->
+
+        <div class="col-sm-8 blog-main">
+
+          <div class="blog-post">
+              <div class="row">
+                  {% for producto in productos %}
+
+
+                  <div class="col-md-4 producto">
+                      <div class="single-product">
+                          <img src="{% if producto.imagen %} {{ producto.imagen.url }} {% else %} {% static 'img/default.jpg' %} {% endif %}" alt="..." class="rounded mx-auto d-block" style="height: 120px; width: auto">
+                        <div class="product-details">
+                          <a href="{{ producto.get_absolute_url }}"><h6 class="text-center">{{ producto.Modelo }}</h6></a>                          
+                          <div class="price text-center">
+                            <h6>$ {{ producto.Total }}</h6>
+                            <h6 class="l-through">$210.00</h6>
+                          </div>
+                          <div class="prd-bottom">
+          
+                            <a href="" class="social-info justify-content-center">
+                              <span class="ti-bag"></span>
+                              <p class="hover-text">Comprar</p>
+                            </a>
+                            <a href="" class="social-info">
+                              <span class="lnr lnr-heart"></span>
+                              <p class="hover-text">Favoritos</p>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div> 
+
+
+
+
+
+                      <!-- <div class="col-md-4">
+                        <div class="thumbnail">
+                            <a href="{{ Producto.get_absolute_url }}">
+                                <img src="{% if producto.imagen %} {{ producto.imagen.url }} {% else %} {% static 'img/default.jpg' %} {% endif %}" alt="..." class="rounded mx-auto d-block" style="height: 160px; width: auto">
+                            </a>
+                            <div class="caption">
+                                <h3 class="text-center">
+                                    <a href="{{ producto.get_absolute_url }}">{{ producto.Modelo }}</a>
+                                </h3>
+                                <p class="text-center">$ {{ producto.Total }}</p>
+                            </div>
+                        </div>
+                      </div>  -->
+                  {% endfor %}
+              </div>
+
+
+          </div><!-- /.blog-post -->
+
+        </div><!-- /.blog-main -->
+
+        
+
+      </div><!-- /.row -->
+
+    </div><!-- /.container -->
+{% endblock %}
