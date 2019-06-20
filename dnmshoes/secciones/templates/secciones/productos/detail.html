@@ -18,7 +18,7 @@
                             <img src="{% if producto.imagen %} {{ producto.imagen.url }} {% else %} {% static 'img/default.jpg' %} {% endif %}" alt="..." style="height: 170px; width: auto">
                         </div>
                         <div class="col-md-6" style="padding-left: 20px">
-                            <h3>{{ producto.Nombre }}</h3>
+                            <h3>{{ producto.Modelo }} </h3>
                             <h6><a href="{{ producto.categoria.get_absolute_url }}">{{ producto.categoria }}</a></h6>
                             <p class="text-muted">$ {{ producto.Total }}</p>
                             <form action="{% url "carrito:carrito_agregar" producto.id_producto %}" method="post">
