@@ -37,7 +37,7 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('precio', models.DecimalField(decimal_places=2, max_digits=10)),
                 ('cantidad', models.PositiveIntegerField(default=1)),
-                ('orden', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='items', to='ordenc.Orden')),
+                ('orden', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='items', to='orden.Orden')),
                 ('producto', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='orden_items', to='secciones.Producto')),
             ],
         ),

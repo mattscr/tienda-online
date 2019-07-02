@@ -25,7 +25,7 @@ SECRET_KEY = 'q^)p(0l9oox9q+^5pt920#g#s)^gn!$xdd768v&+@k(sj7@)c^'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.1.12']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     #mis apps
     'secciones',
     'carrito.apps.CarritoConfig',
-    'ordenc.apps.OrdencConfig',
+    'orden.apps.ordenonfig',
     #'adminsortable2',
     #'mptt',
     #'ckeditor',
