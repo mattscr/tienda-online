@@ -4,7 +4,7 @@ __pycache__/
 *$py.class
 
 #folder
-products/
+products
 
 # C extensions
 *.so
