@@ -15,6 +15,8 @@ class Orden(models.Model):
 
     class Meta:
         ordering = ('-Creado', )
+        verbose_name= 'Orden'
+        verbose_name_plural = 'Ordenes'
 
     def __str__(self):
         return 'Orden {}'.format(self.id)
