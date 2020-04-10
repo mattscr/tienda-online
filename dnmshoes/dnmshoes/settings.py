@@ -25,24 +25,31 @@ SECRET_KEY = 'q^)p(0l9oox9q+^5pt920#g#s)^gn!$xdd768v&+@k(sj7@)c^'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["192.168.0.102"]
 
 
 # Application definition
 
-INSTALLED_APPS = [
-    'jet.dashboard',
-    'jet',
+DEFAULT_APPS = [
+    'jet.dashboard', #dashboard
+    'jet',           #dashboard
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    #mis apps
+]
+
+LOCAL_APPS = [
     'secciones',
     'carrito.apps.CarritoConfig',
     'orden.apps.ordenonfig',
+]
+
+THIRD_PARTY_APPS = [
+    'django_instagram',
+    'social_django',
     #'adminsortable2',
     #'mptt',
     #'ckeditor',
@@ -54,6 +61,8 @@ INSTALLED_APPS = [
     #'editors',
 ]
 
+INSTALLED_APPS = DEFAULT_APPS + LOCAL_APPS + THIRD_PARTY_APPS
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -62,6 +71,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    #social_django
+    'social_django.middleware.SocialAuthExceptionMiddleware',
 ]
 
 ROOT_URLCONF = 'dnmshoes.urls'
@@ -77,11 +88,22 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'carrito.context_processors.carro'
+                'carrito.context_processors.carro', #<-- carrito
+                'social_django.context_processors.backends',  # <-- social_django
+                'social_django.context_processors.login_redirect', # <-- social_django
             ],
         },
     },
 ]
+#soaial_django -------------
+AUTHENTICATION_BACKENDS = (
+    'social_core.backends.facebook.FacebookOAuth2',
+    'social_core.backends.twitter.TwitterOAuth',
+    'social_core.backends.github.GithubOAuth2',
+
+    'django.contrib.auth.backends.ModelBackend',
+)
+#social_django fin------------
 
 WSGI_APPLICATION = 'dnmshoes.wsgi.application'
 

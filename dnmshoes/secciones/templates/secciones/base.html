@@ -14,23 +14,6 @@
 <body>
 {% include 'secciones/navbar.html' %}
 
-<div class="container">
-    <div class="row" style="margin-top: 2%">
-         <button class="btn btn-info pull-right">
-            {% with totail_items=carrito|length %}
-                {% if carrito|length > 0 %}
-                    Mi orden de compra:
-                    <a href="{% url "carrito:carrito_detalle" %}" style="color: #ffffff">
-                        {{ totail_items }} Producto{{ totail_items|pluralize }}, $. {{ carrito.get_total_price }}
-                    </a>
-                    {% else %}
-                    Tu carrito esta vacio.
-                {% endif %}
-            {% endwith %}
-         </button>
-    </div>
-</div>
-
 {% block content %}
 
 {% endblock %}

@@ -27,7 +27,3 @@ def product_detail(request, id, slug):
         'form_carrito_producto': form_carrito_producto
     }
     return render(request, 'secciones/productos/detail.html', context)
-
-
-
-  

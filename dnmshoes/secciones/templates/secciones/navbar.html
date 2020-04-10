@@ -32,16 +32,33 @@
         </div>
       </li>
     </ul>
+
+
+<!-- nombre de usuario -->
     <form class="form-inline">
       <!-- {{ request.user }} -->
-      
       <div class="input-group">
         <div class="input-group-prepend">
-          <span class="input-group-text" id="basic-addon1">@</span>
+          <!--Carrito de compras-->
+          {% with totail_items=carrito|length %}
+              {% if carrito|length > 0 %}
+                <a href="{% url "carrito:carrito_detalle" %}" class="input-group-text ti-shopping-cart-full">{{ totail_items }}</a>
+                <!-- objetos 
+                {{ totail_items }}= cantidad de items
+                Producto{{ totail_items|pluralize }}
+                {{ carrito.get_total_price }}
+                -->
+              {% else %}
+                <span class="input-group-text ti-shopping-cart" id="basic-addon1"></span>
+              {% endif %}
+          {% endwith %} 
+      <!--fin Carrito de compras -->
+          <span class="input-group-text ti-user" id="basic-addon1"></span>
         </div>
         <input type="text" class="form-control" placeholder="{{ request.user }}" aria-label="Username" aria-describedby="basic-addon1" disabled>
       </div>
-    </form>
+    </form>  
+ <!--fin nombre de usuario-->            
   </div>
   </nav>
 </div>
