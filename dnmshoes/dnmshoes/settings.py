@@ -50,6 +50,7 @@ LOCAL_APPS = [
 THIRD_PARTY_APPS = [
     'django_instagram',
     'social_django',
+    'crispy_forms',
     #'adminsortable2',
     #'mptt',
     #'ckeditor',
@@ -60,6 +61,8 @@ THIRD_PARTY_APPS = [
     #'menu',
     #'editors',
 ]
+
+CRISPY_TEMPLATE_PACK = 'Bootstrap4'
 
 INSTALLED_APPS = DEFAULT_APPS + LOCAL_APPS + THIRD_PARTY_APPS
 
@@ -141,7 +144,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
 
-LANGUAGE_CODE = 'es-ES'
+LANGUAGE_CODE = 'es-AR'
 
 TIME_ZONE = 'UTC'
 

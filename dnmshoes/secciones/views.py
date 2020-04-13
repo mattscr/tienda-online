@@ -27,3 +27,14 @@ def product_detail(request, id, slug):
         'form_carrito_producto': form_carrito_producto
     }
     return render(request, 'secciones/productos/detail.html', context)
+
+from django.shortcuts import render
+from django.urls import reverse_lazy
+from django.views.generic import CreateView
+from .forms import SignUpForm
+
+# Sign Up View
+class SignUpView(CreateView):
+    form_class = SignUpForm
+    success_url = reverse_lazy('list')
+    template_name = 'secciones/register.html'
