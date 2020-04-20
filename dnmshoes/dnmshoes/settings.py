@@ -226,7 +226,7 @@ JET_SIDE_MENU_COMPACT = True
 #JET_INDEX_DASHBOARD = 'dashboard.CustomIndexDashboard'
 CART_SESSION_ID = 'carrito'
 
-#from django.urls import reverse_lazy
-
-#LOGIN_URL = reverse_lazy('login')
 LOGIN_REDIRECT_URL = ('/')
+
+#configuracion allauth
+ACCOUNT_EMAIL_VERIFICATION = 'none'
