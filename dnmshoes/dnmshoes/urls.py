@@ -23,11 +23,23 @@ from django.views.generic import TemplateView
 admin.autodiscover()
 
 urlpatterns = [
+    #panel de administracion jet
 	path('jet/', include('jet.urls', 'jet')),
 	path('jet/dashboard/', include('jet.dashboard.urls', 'jet-dashboard')),
     path('admin/', admin.site.urls),
+
+    #allauth (cuentas - sesiones - registro)
+    path('accounts/', include('allauth.urls')),
+
+    #carrito de compras 
     path('carrito/', include('carrito.urls')),
+
+    #orden de compras
     path('ordenes/', include('orden.urls')),
+
+    #principal
     path('', include('secciones.urls')),
-    path('', TemplateView.as_view(template_name='base.html', extra_context={"instagram_profile_name": "benjamin.ind"})),    
+
+    #instagram app
+    #path('', TemplateView.as_view(template_name='base.html', extra_context={"instagram_profile_name": "benjamin.ind"})),    
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -39,6 +39,7 @@ DEFAULT_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
 ]
 
 LOCAL_APPS = [
@@ -50,6 +51,14 @@ LOCAL_APPS = [
 THIRD_PARTY_APPS = [
     'django_instagram',
     'crispy_forms',
+    #autenticacion(inicio sesion - registro)
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    #'allauth.socialaccount.providers.facebook',
+    #'allauth.socialaccount.providers.google',
+    #'allauth.socialaccount.providers.instagram',
+    #'allauth.socialaccount.providers.twitter',
     #'adminsortable2',
     #'mptt',
     #'ckeditor',
@@ -63,7 +72,25 @@ THIRD_PARTY_APPS = [
 
 CRISPY_TEMPLATE_PACK = 'Bootstrap4'
 
+
 INSTALLED_APPS = DEFAULT_APPS + LOCAL_APPS + THIRD_PARTY_APPS
+
+#allauth
+SITE_ID = 1
+
+# Provider specific settings
+""" SOCIALACCOUNT_PROVIDERS = {
+    'google': {
+        # For each OAuth based provider, either add a ``SocialApp``
+        # (``socialaccount`` app) containing the required client
+        # credentials, or list them here:
+        'APP': {
+            'client_id': '123',
+            'secret': '456',
+            'key': ''
+        }
+    }
+} """
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -89,6 +116,8 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'carrito.context_processors.carro', #<-- carrito
+                # `allauth` needs this from django
+                'django.template.context_processors.request',
             ],
         },
     },
@@ -107,6 +136,16 @@ DATABASES = {
     }
 }
 
+#allauth
+AUTHENTICATION_BACKENDS = (
+    
+    # Necesario para iniciar sesión por nombre de usuario en el administrador de Django, independientemente de `allauth`
+    'django.contrib.auth.backends.ModelBackend',
+
+    # métodos de autenticación específicos de 'allauth' como el inicio de sesión por correo electrónico
+    'allauth.account.auth_backends.AuthenticationBackend',
+    
+)
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
@@ -187,7 +226,7 @@ JET_SIDE_MENU_COMPACT = True
 #JET_INDEX_DASHBOARD = 'dashboard.CustomIndexDashboard'
 CART_SESSION_ID = 'carrito'
 
-from django.urls import reverse_lazy
+#from django.urls import reverse_lazy
 
-LOGIN_URL = reverse_lazy('login')
-LOGIN_REDIRECT_URL = reverse_lazy('home')
+#LOGIN_URL = reverse_lazy('login')
+LOGIN_REDIRECT_URL = ('/')

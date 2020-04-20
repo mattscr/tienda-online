@@ -23,7 +23,7 @@
     {% if request.user.is_authenticated %}
       <ul class="nav navbar-nav ml auto">
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'secciones:logout' %}">salir</a>
+          <a class="nav-link" href="{% url 'account_logout' %}">Cerrar sesión</a>
         </li>
       </ul>
     {% else %}
@@ -39,8 +39,7 @@
                       <a href="#" class="btn btn-tw"><i class="ti-twitter-alt"></i> Twitter</a>
                     </div>
                                     o
-                                    {% include 'registration/login.html' %}
-                    {% comment %} <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
+                    <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
                       {% csrf_token %}
                         <div class="form-group">
                           <label class="sr-only" for="exampleInputEmail2">Email</label>
@@ -59,10 +58,10 @@
                           <input type="checkbox"> Mantener la sesión activa
                           </label>
                         </div>
-                    </form> {% endcomment %}
+                    </form>
                   </div>
                   <div class="bottom container">
-                    Nuevo aqui ? <a href="{% url 'secciones:register' %}"><b> Registrate!</b></a>
+                    Nuevo aqui ? <a href="{% url 'account_signup' %}"><b> Registrate!</b></a>
                   </div>
               </div>
             </li>
