@@ -32,12 +32,14 @@ from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views.generic import CreateView
 from .forms import SignUpForm
+from django.contrib.messages.views import SuccessMessageMixin
 
 # Sign Up View
-class SignUpView(CreateView):
+class SignUpView(SuccessMessageMixin, CreateView):
     form_class = SignUpForm
-    success_url = reverse_lazy('')
+    success_url = reverse_lazy('secciones:home')
     template_name = 'secciones/register.html'
+    success_message = "%(Nombre)s creado exitosamente!"
 
 from django.contrib.auth import authenticate
 from django.contrib.auth.forms import AuthenticationForm

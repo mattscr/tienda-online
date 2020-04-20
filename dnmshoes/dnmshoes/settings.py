@@ -49,7 +49,6 @@ LOCAL_APPS = [
 
 THIRD_PARTY_APPS = [
     'django_instagram',
-    'social_django',
     'crispy_forms',
     #'adminsortable2',
     #'mptt',
@@ -74,8 +73,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    #social_django
-    'social_django.middleware.SocialAuthExceptionMiddleware',
 ]
 
 ROOT_URLCONF = 'dnmshoes.urls'
@@ -92,21 +89,10 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'carrito.context_processors.carro', #<-- carrito
-                'social_django.context_processors.backends',  # <-- social_django
-                'social_django.context_processors.login_redirect', # <-- social_django
             ],
         },
     },
 ]
-#soaial_django -------------
-AUTHENTICATION_BACKENDS = (
-    'social_core.backends.facebook.FacebookOAuth2',
-    'social_core.backends.twitter.TwitterOAuth',
-    'social_core.backends.github.GithubOAuth2',
-
-    'django.contrib.auth.backends.ModelBackend',
-)
-#social_django fin------------
 
 WSGI_APPLICATION = 'dnmshoes.wsgi.application'
 
@@ -200,3 +186,8 @@ JET_SIDE_MENU_COMPACT = True
 
 #JET_INDEX_DASHBOARD = 'dashboard.CustomIndexDashboard'
 CART_SESSION_ID = 'carrito'
+
+from django.urls import reverse_lazy
+
+LOGIN_URL = reverse_lazy('login')
+LOGIN_REDIRECT_URL = reverse_lazy('home')
