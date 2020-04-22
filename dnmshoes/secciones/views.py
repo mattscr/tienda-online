@@ -28,14 +28,3 @@ def product_detail(request, id, slug):
     }
     return render(request, 'secciones/productos/detail.html', context)
 
-from django.shortcuts import render
-from django.urls import reverse_lazy
-from django.views.generic import CreateView
-from .forms import SignUpForm
-from django.contrib.messages.views import SuccessMessageMixin
-
-# Sign Up View
-class SignUpView(SuccessMessageMixin, CreateView):
-    form_class = SignUpForm
-    success_url = reverse_lazy('secciones:home')
-    template_name = 'register.html'
