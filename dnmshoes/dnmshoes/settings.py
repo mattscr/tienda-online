@@ -59,15 +59,10 @@ THIRD_PARTY_APPS = [
     #'allauth.socialaccount.providers.google',
     #'allauth.socialaccount.providers.instagram',
     #'allauth.socialaccount.providers.twitter',
-    #'adminsortable2',
     #'mptt',
     #'ckeditor',
     #'tinymce',
     #'debug_toolbar',
-    #'core',
-    #'people',
-    #'menu',
-    #'editors',
 ]
 
 CRISPY_TEMPLATE_PACK = 'Bootstrap4'
