@@ -20,23 +20,25 @@
     width: 49%;
 }
 #login-dp .form-group {
-    margin-bottom: 10px;
+    margin-bottom: 1em;
+    margin-top: 1em;
 }
 .btn-fb{
-    color: #fff;
-    background-color:#3b5998;
+    color: #fff !important;
+    background-color:#3b5998 !important;
+    
 }
 .btn-fb:hover{
-    color: #fff;
-    background-color:#496ebc 
+    color: #fff !important;
+    background-color:#496ebc !important;
 }
 .btn-tw{
-    color: #fff;
-    background-color:#55acee;
+    color: #fff !important;
+    background-color:#55acee !important;
 }
 .btn-tw:hover{
-    color: #fff;
-    background-color:#59b5fa;
+    color: #fff !important;
+    background-color:#59b5fa !important;
 }
 @media(max-width:768px){
     #login-dp{

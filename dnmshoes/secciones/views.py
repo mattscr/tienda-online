@@ -1,9 +1,20 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Categoria, Producto
 from carrito.forms import FormAgregarProductoCarrito
+from django.views.generic import ListView, DetailView, View
+
+class HomeView (ListView):
+    template_name = "index.html"
+    queryset = Producto.objects.filter(disponibilidad=True)
+    context_object_name = 'Productos'
+
+class ShopView(ListView):
+    model = Producto
+    paginate_by = 6 
+    template_name =  "productos/listado_productos.html"
 
 
-def product_list(request, category_slug=None):
+def CategoriaFunc(request, category_slug=None):
     categoria = None
     categorias = Categoria.objects.all()
     productos = Producto.objects.filter(disponibilidad=True)
@@ -16,7 +27,7 @@ def product_list(request, category_slug=None):
         'categorias': categorias,
         'productos': productos
     }
-    return render(request, 'productos/list.html', context)
+    return render(request, 'productos/categoria.html', context)
 
 
 def product_detail(request, id, slug):
