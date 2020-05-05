@@ -1,4 +1,4 @@
-{% extends 'secciones/base.html' %}
+{% extends 'base.html' %}
 {% load static %}
 {% block title %}
     Tu carrito de compras
@@ -26,7 +26,7 @@
                         <tr>
                             <td>
                                 <a href="{{ producto.get__absolute_url }}">
-                                    <img src="{% if producto.imagen %} {{ producto.imagen.url }} {% else %} {% static 'img/default.jpg' %} {% endif %}" alt="..." style="height: 130px; width: auto">
+                                    <img src="{% if producto.imagen %} {{ producto.imagen.url }} {% else %} {% static 'img/default.svg' %} {% endif %}" alt="..." style="height: 130px; width: auto">
                                 </a>
                             </td>
                             <td>{{ producto.Modelo.Marca }} {{ producto.Modelo }}</td>
@@ -54,7 +54,7 @@
                 </tbody>
             </table>
         <p class="text-right">
-            <a href="{% url 'secciones:product_list' %}" class="btn btn-default">Continuar comprando</a>
+            <a href="{% url 'secciones:tienda' %}" class="btn btn-default">Continuar comprando</a>
             <a href="{% url 'ordenes:crear_orden' %}" class="btn btn-primary">Confirmar</a>
         </p>
         </div>
