@@ -1,3 +1,4 @@
+/*login dropdown*/
 #login-dp{
     min-width: 250px;
     padding: 14px 14px 0;
@@ -23,24 +24,41 @@
     margin-bottom: 1em;
     margin-top: 1em;
 }
+#login-dp a.link-dp{
+    color: black !important;
+}
+#login-dp input.form-control{
+    border: none;
+    border-bottom: 1px solid black !important;
+    border-color: black !important;
+}
 .btn-fb{
     color: #fff !important;
-    background-color:#3b5998 !important;
+    background-color:#000000 !important;
     
 }
 .btn-fb:hover{
     color: #fff !important;
-    background-color:#496ebc !important;
+    background-color:#3b5998 !important;
 }
 .btn-tw{
     color: #fff !important;
-    background-color:#55acee !important;
+    background-color:#000000  !important;
 }
 .btn-tw:hover{
     color: #fff !important;
-    background-color:#59b5fa !important;
+    background-color:#55acee !important;
 }
-@media(max-width:768px){
+button.login-b{
+    color: white !important;
+    background-color: black !important;
+    border-color: black !important;
+}
+button.login-b:hover{
+    color: white !important;
+    background-color: rgb(10, 10, 10) !important;
+}
+@media(max-width:572px){
     #login-dp{
         background-color: inherit;
         color: #fff;
@@ -49,4 +67,133 @@
         background-color: inherit;
         border-top:0 none;
     }
+    .btn-fb{
+        color: #fff !important;
+        background-color:#3b5998 !important;
+    }
+    .btn-tw{
+        color: #fff !important;
+        background-color:#55acee !important;
+    }
+    #login-dp a.link-dp{
+        color: white !important;
+    }
+    button.login-b{
+        color: black !important;
+        background-color: white !important;
+    }
 }
+
+/*user logged in*/
+.webnav .navbar-nav .nav-link > .lnr {
+    position: relative;
+    width: 36px;
+    font-size: 24px;
+}
+.webnav .navbar-nav .nav-link > .lnr {
+    top: 3px;
+    line-height: 12px;
+    padding-right: 0.5rem;
+}
+.webnav .navbar-nav .nav-link > .lnr > .badge {
+    font-size: 0.75rem;
+    position: absolute;
+    right: -10px;
+    font-family: sans-serif;
+}
+.webnav .navbar-nav .nav-link > .lnr > .badge {
+    top: -15px;
+}
+@media (min-width: 576px) {
+    .webnav.navbar-expand-sm .navbar-nav .nav-link {
+      text-align: center;
+      display: table-cell;
+      height: 70px;
+      vertical-align: middle;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  
+    .webnav.navbar-expand-sm .navbar-nav .nav-link > .lnr {
+      display: block;
+      width: 48px;
+      margin: 2px auto 4px auto;
+      top: 0;
+      line-height: 24px;
+    }
+  
+    .webnav.navbar-expand-sm .navbar-nav .nav-link > .lnr > .badge {
+      top: -7px;
+    }
+}
+  
+@media (min-width: 768px) {
+    .webnav.navbar-expand-md .navbar-nav .nav-link {
+      text-align: center;
+      display: table-cell;
+      height: 70px;
+      vertical-align: middle;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  
+    .webnav.navbar-expand-md .navbar-nav .nav-link > .lnr {
+      display: block;
+      width: 48px;
+      margin: 2px auto 4px auto;
+      top: 0;
+      line-height: 24px;
+    }
+  
+    .webnav.navbar-expand-md .navbar-nav .nav-link > .lnr > .badge {
+      top: -7px;
+    }
+}
+  
+@media (min-width: 992px) {
+    .webnav.navbar-expand-lg .navbar-nav .nav-link {
+      text-align: center;
+      display: table-cell;
+      height: 70px;
+      vertical-align: middle;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  
+    .webnav.navbar-expand-lg .navbar-nav .nav-link > .lnr {
+      display: block;
+      width: 48px;
+      margin: 2px auto 4px auto;
+      top: 0;
+      line-height: 24px;
+    }
+  
+    .webnav.navbar-expand-lg .navbar-nav .nav-link > .lnr > .badge {
+      top: -7px;
+    }
+}
+  
+@media (min-width: 1200px) {
+    .webnav.navbar-expand-xl .navbar-nav .nav-link {
+      text-align: center;
+      display: table-cell;
+      height: 70px;
+      vertical-align: middle;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  
+    .webnav.navbar-expand-xl .navbar-nav .nav-link > .lnr {
+      display: block;
+      width: 48px;
+      margin: 2px auto 4px auto;
+      top: 0;
+      line-height: 24px;
+    }
+  
+    .webnav.navbar-expand-xl .navbar-nav .nav-link > .lnr > .badge {
+      top: -7px;
+    }
+}
+  
+  

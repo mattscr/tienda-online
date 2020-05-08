@@ -6,7 +6,7 @@
 }
 </style>
  <!--nav-bar-->
-<nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-dark">
+<nav class="navbar webnav navbar-expand-lg fixed-top  navbar-dark bg-dark">
 
   <a class="navbar-brand" href="{% url 'secciones:home' %}"><img src="{% static 'img/logo.svg' %}" class="logonav" alt="logo"></a>
 
@@ -34,6 +34,23 @@
       {% endif %}
       <ul class="nav navbar-nav ml auto">
         <li class="nav-item">
+          <a class="nav-link" href="{% url "carrito:carrito_detalle" %}">
+            <i class="lnr lnr-cart">
+              {% with total_items=carrito|length %}
+                {% if carrito|length > 0 %}
+                <span class="badge badge-light">{{total_items}}</span>
+                {% endif %}
+              {% endwith %}
+            </i>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#perfil">
+            <i class="lnr lnr-user">
+            </i>
+          </a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link" href="{% url 'account_logout' %}">Cerrar sesión</a>
         </li>
       </ul>
@@ -50,7 +67,6 @@
                       <a href="#" class="btn btn-tw"><i class="fa fa-twitter"></i> Twitter</a>
                     </div>
                       <hr>
-{% comment %}                     <div class="d-flex justify-content-center"><strong>O</strong></div> {% endcomment %}
                       <form class="login" role="form" method="POST" action="{% url 'account_login' %}" accept-charset="UTF-8" id="login-nav">
                         {% csrf_token %}
                         <input type="hidden" name="next" value="{{ request.get_full_path }}" />
@@ -76,7 +92,7 @@
                             {% comment %} <input type="password" name="password" placeholder="Contraseña" required id="id_password"> {% endcomment %}
                           </td>
                         </tr>
-                        <div class="help-block text-right"><a class="button secondaryAction" href="{% url 'account_reset_password' %}">¿Olvidaste la contraseña?</a></div>
+                        <div class="help-block text-right"><a class="button secondaryAction link-dp" href="{% url 'account_reset_password' %}">¿Olvidaste la contraseña?</a></div>
                         <tr>
                           <td>
                             <div class="checkbox">
@@ -84,9 +100,9 @@
                             </div>
                           </td>
                         </tr>                        
-                        <button class="primaryAction btn btn-primary btn-block" type="submit">Iniciar sesión</button>
+                        <button class="primaryAction btn btn-primary btn-block login-b" type="submit">Iniciar sesión</button>
                       </form>
-                      <div class="bottom container">Nuevo aqui ?<a href="{% url 'account_signup' %}"><b> Registrate!</b></a>
+                      <div class="bottom container">Nuevo aqui ?<a href="{% url 'account_signup' %}" class="link-dp"><b> Registrate!</b></a>
                       </div>                    
                   </div>
                   
