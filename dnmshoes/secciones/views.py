@@ -3,12 +3,12 @@ from .models import Categoria, Producto
 from carrito.forms import FormAgregarProductoCarrito
 from django.views.generic import ListView, DetailView, View
 
-class HomeView (ListView):
+class PrincipalView (ListView):
     template_name = "index.html"
     queryset = Producto.objects.filter(disponibilidad=True)
     context_object_name = 'Productos'
 
-class ShopView(ListView):
+class TiendaView(ListView):
     model = Producto
     paginate_by = 6 
     template_name =  "productos/listado_productos.html"
