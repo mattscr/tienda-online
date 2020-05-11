@@ -3,44 +3,276 @@
 {% block content %}
 
 
+<div class="container">
+    <div class="row">
+        {% for Productos in object_list %}
+        <div class="col-md-3 col-sm-6">
+            <!-- Block2 -->
+            <div class="block2">
+                <div class="block2-img wrap-pic-w of-hidden pos-relative block2-labelnew">
+                    <img src="{% if Productos.imagen %} {{ Productos.imagen.url }} {% else %} {% static 'img/default.svg' %} {% endif %}" alt="..." class="rounded mx-auto d-block" style="height: 120px; width: auto">
 
-<div class="row">
-    {% for Productos in object_list %}
-    <div class="col-sm-12 col-md-6 col-lg-4 p-b-50">
-        <!-- Block2 -->
-        <div class="block2">
-            <div class="block2-img wrap-pic-w of-hidden pos-relative block2-labelnew">
-                <img src="{% if Productos.imagen %} {{ Productos.imagen.url }} {% else %} {% static 'img/default.svg' %} {% endif %}" alt="..." class="rounded mx-auto d-block" style="height: 120px; width: auto">
+                    {% comment %} <img src="{{ Productos.imagen.url }}" alt="IMG-PRODUCT" 
+                style="height: 360px;"> {% endcomment %}
 
-                {% comment %} <img src="{{ Productos.imagen.url }}" alt="IMG-PRODUCT" 
-            style="height: 360px;"> {% endcomment %}
+                    <div class="block2-overlay trans-0-4">
+                        <a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
+                            <i class="icon-wishlist icon_heart_alt" aria-hidden="true"></i>
+                            <i class="icon-wishlist icon_heart dis-none" aria-hidden="true"></i>
+                        </a>
 
-                <div class="block2-overlay trans-0-4">
-                    <a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
-                        <i class="icon-wishlist icon_heart_alt" aria-hidden="true"></i>
-                        <i class="icon-wishlist icon_heart dis-none" aria-hidden="true"></i>
+                        <div class="block2-btn-addcart w-size1 trans-0-4">
+                            <!-- Button -->
+                            <button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="block2-txt p-t-20">
+                    <a href="{{Productos.get_absolute_url}}" class="block2-name dis-block s-text3 p-b-5">
+                        {{Productos.Modelo}}
                     </a>
 
-                    <div class="block2-btn-addcart w-size1 trans-0-4">
-                        <!-- Button -->
-                        <button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4">
-                            Add to Cart
-                        </button>
+                    <span class="block2-price m-text6 p-r-5">
+                        ${{Productos.Total}}
+                    </span>
+                </div>
+            </div>
+        </div>
+        <!--modelo 1-->
+        <div class="col-md-3 col-sm-6">
+            <div class="product-grid">
+                <div class="product-image">
+                    <a href="#">
+                        <img class="pic-1" src="{{ Productos.imagen.url }}">
+                        <img class="pic-2" src="{{ Productos.imagen.url }}">
+                    </a>
+                    <ul class="social">
+                        <li><a href="" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
+                        <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
+                        <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
+                    </ul>
+                    <span class="product-new-label">Sale</span>
+                    <span class="product-discount-label">20%</span>
+                </div>
+                <ul class="rating">
+                    <li class="fa fa-star"></li>
+                    <li class="fa fa-star"></li>
+                    <li class="fa fa-star"></li>
+                    <li class="fa fa-star"></li>
+                    <li class="fa fa-star disable"></li>
+                </ul>
+                <div class="product-content">
+                    <h3 class="title"><a href="{{Productos.get_absolute_url}}">{{Productos.Modelo}}</a></h3>
+                    <div class="price">${{Productos.Total}}
+                        <span>$20.00</span>
+                    </div>
+                    <a class="add-to-cart" href="#">+ Add To Cart</a>
+                </div>
+            </div>
+        </div>
+        <!--modelo 2-->
+        <div class="col-md-3 col-sm-6">
+            <div class="product-grid2">
+                <div class="product-image2">
+                    <a href="#">
+                        <img class="pic-1" src="{{ Productos.imagen.url }}">
+                        <img class="pic-2" src="{{ Productos.imagen.url }}">
+                    </a>
+                    <ul class="social">
+                        <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
+                        <li><a href="#" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
+                        <li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
+                    </ul>
+                    <a class="add-to-cart" href="">Add to cart</a>
+                </div>
+                <div class="product-content">
+                    <h3 class="title"><a href="{{Productos.get_absolute_url}}">{{Productos.Modelo}}</a></h3>
+                    <span class="price">${{Productos.Total}}</span>
+                </div>
+            </div>
+        </div>
+        <!--modelo 3-->
+        <div class="col-md-3 col-sm-6">
+            <div class="product-grid3">
+                <div class="product-image3">
+                    <a href="#">
+                        <img class="pic-1" src="{{ Productos.imagen.url }}">
+                        <img class="pic-2" src="{{ Productos.imagen.url }}">
+                    </a>
+                    <ul class="social">
+                        <li><a href="#"><i class="fa fa-shopping-bag"></i></a></li>
+                        <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                    </ul>
+                    <span class="product-new-label">New</span>
+                </div>
+                <div class="product-content">
+                    <h3 class="title"><a href="{{Productos.get_absolute_url}}">{{Productos.Modelo}}</a></h3>
+                    <div class="price">
+                        ${{Productos.Total}}
+                        <span>$75.00</span>
+                    </div>
+                    <ul class="rating">
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star disable"></li>
+                        <li class="fa fa-star disable"></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--modelo 4-->
+        <div class="col-md-3 col-sm-6">
+            <div class="product-grid4">
+                <div class="product-image4">
+                    <a href="#">
+                        <img class="pic-1" src="{{ Productos.imagen.url }}">
+                        <img class="pic-2" src="{{ Productos.imagen.url }}">
+                    </a>
+                    <ul class="social">
+                        <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
+                        <li><a href="#" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
+                        <li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
+                    </ul>
+                    <span class="product-new-label">New</span>
+                    <span class="product-discount-label">-10%</span>
+                </div>
+                <div class="product-content">
+                    <h3 class="title"><a href="{{Productos.get_absolute_url}}">{{Productos.Modelo}}</a></h3>
+                    <div class="price">
+                        ${{Productos.Total}}
+                        <span>$16.00</span>
+                    </div>
+                    <a class="add-to-cart" href="">ADD TO CART</a>
+                </div>
+            </div>
+        </div>
+        <!--modelo 5-->
+        <div class="col-md-3 col-sm-6">
+            <div class="product-grid5">
+                <div class="product-image5">
+                    <a href="#">
+                        <img class="pic-1" src="{{ Productos.imagen.url }}">
+                        <img class="pic-2" src="{{ Productos.imagen.url }}">
+                    </a>
+                    <ul class="social">
+                        <li><a href="" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
+                        <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
+                        <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
+                    </ul>
+                    <a href="#" class="select-options"><i class="fa fa-arrow-right"></i> Select Options</a>
+                </div>
+                <div class="product-content">
+                    <h3 class="title"><a href="{{Productos.get_absolute_url}}">{{Productos.Modelo}}</a></h3>
+                    <div class="price">${{Productos.Total}}</div>
+                </div>
+            </div>
+        </div>
+        <!--modelo 6-->
+        <div class="col-md-3 col-sm-6">
+            <div class="product-grid6">
+                <div class="product-image6">
+                    <a href="#">
+                        <img class="pic-1" src="{{ Productos.imagen.url }}">
+                    </a>
+                </div>
+                <div class="product-content">
+                    <h3 class="title"><a href="{{Productos.get_absolute_url}}">{{Productos.Modelo}}</a></h3>
+                    <div class="price">${{Productos.Total}}
+                        <span>$14.00</span>
+                    </div>
+                </div>
+                <ul class="social">
+                    <li><a href="" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
+                    <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
+                    <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <!--modelo 7-->
+        <div class="col-md-3 col-sm-6">
+            <div class="product-grid7">
+                <div class="product-image7">
+                    <a href="#">
+                        <img class="pic-1" src="{{ Productos.imagen.url }}">
+                        <img class="pic-2" src="{{ Productos.imagen.url }}">
+                    </a>
+                    <ul class="social">
+                        <li><a href="" class="fa fa-search"></a></li>
+                        <li><a href="" class="fa fa-shopping-bag"></a></li>
+                        <li><a href="" class="fa fa-shopping-cart"></a></li>
+                    </ul>
+                    <span class="product-new-label">New</span>
+                </div>
+                <div class="product-content">
+                    <h3 class="title"><a href="{{Productos.get_absolute_url}}">{{Productos.Modelo}}</a></h3>
+                    <ul class="rating">
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                    </ul>
+                    <div class="price">${{Productos.Total}}
+                        <span>$20.00</span>
                     </div>
                 </div>
             </div>
-
-            <div class="block2-txt p-t-20">
-                <a href="{{Productos.get_absolute_url}}" class="block2-name dis-block s-text3 p-b-5">
-                    {{Productos.Modelo}}
-                </a>
-
-                <span class="block2-price m-text6 p-r-5">
-                    ${{Productos.Total}}
-                </span>
+        </div>
+        <!--modelo 8-->
+        <div class="col-md-4 col-sm-6">
+            <div class="product-grid8">
+                <div class="product-image8">
+                    <a href="#">
+                        <img class="pic-1" src="{{ Productos.imagen.url }}">
+                        <img class="pic-2" src="{{ Productos.imagen.url }}">
+                    </a>
+                    <ul class="social">
+                        <li><a href="" class="fa fa-search"></a></li>
+                        <li><a href="" class="fa fa-shopping-bag"></a></li>
+                        <li><a href="" class="fa fa-shopping-cart"></a></li>
+                    </ul>
+                    <span class="product-discount-label">-20%</span>
+                </div>
+                <div class="product-content">
+                    <div class="price">$ {{Productos.Total}}
+                        <span>$ 10.00</span>
+                    </div>
+                    <span class="product-shipping">Free Shipping</span>
+                    <h3 class="title"><a href="{{Productos.get_absolute_url}}">{{Productos.Modelo}}</a></h3>
+                    <a class="all-deals" href="">See all deals <i class="fa fa-angle-right icon"></i></a>
+                </div>
             </div>
         </div>
+        <!--modelo 9-->
+        <div class="col-md-3 col-sm-6">
+            <div class="product-grid9">
+                <div class="product-image9">
+                    <a href="#">
+                        <img class="pic-1" src="{{ Productos.imagen.url }}">
+                        <img class="pic-2" src="{{ Productos.imagen.url }}">
+                    </a>
+                    <a href="#" class="fa fa-search product-full-view"></a>
+                </div>
+                <div class="product-content">
+                    <ul class="rating">
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                    </ul>
+                    <h3 class="title"><a href="{{Productos.get_absolute_url}}">{{Productos.Modelo}}</a></h3>
+                    <div class="price"> ${{Productos.Total}}</div>
+                    <a class="add-to-cart" href="">VIEW PRODUCTS</a>
+                </div>
+            </div>
+        </div> 
+        {% endfor %}
     </div>
-    {% endfor %}
 </div>
+
 {% endblock content %}
