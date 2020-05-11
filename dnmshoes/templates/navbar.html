@@ -28,7 +28,7 @@
       {% if request.user.is_superuser %}
       <ul class="nav navbar-nav ml auto">
         <li class="nav-item">
-          <a class="nav-link" href="http://192.168.0.100:8000/admin">admin</a>
+          <a class="nav-link adm-btn" href="{% url 'admin:index' %}">Admin</a>
         </li>
       </ul>
       {% endif %}
@@ -61,7 +61,7 @@
           <ul id="login-dp" class="dropdown-menu dropdown-menu-right mt-2">
             <li>
               <div class="row">
-                  <div class="col-md-12">
+                  <div class="col-lg-12">
                     <div class="social-buttons">
                       <a href="#" class="btn btn-fb"><i class="fa fa-facebook"></i> Facebook</a>
                       <a href="#" class="btn btn-tw"><i class="fa fa-twitter"></i> Twitter</a>
