@@ -1,142 +1,132 @@
+/*logo*/
+
+img.logonav {
+    width: 200px;
+    height: auto;
+    margin: 16px;
+}
+
 /*login dropdown*/
-#login-dp{
-    min-width: 250px;
-    padding: 14px 14px 0;
+
+#login-dp {
+    min-width: 260px;
+    padding: 10px 8px 0;
     /*overflow:hidden;*/
-    background-color:rgba(255,255,255,.8);
+    background-color: rgba(255, 255, 255, .8);
 }
-#login-dp .help-block{
-    font-size:12px    
+
+#login-dp .help-block {
+    font-size: 12px
 }
-#login-dp .bottom{
-    background-color:rgba(255,255,255,.8);
-    border-top:1px solid #ddd;
-    clear:both;
-    padding:14px;
+
+#login-dp .bottom {
+    background-color: rgba(255, 255, 255, .8);
+    border-top: 1px solid #ddd;
+    clear: both;
+    padding: 14px;
 }
-#login-dp .social-buttons{
-    margin:12px 0    
+
+#login-dp .social-buttons {
+    margin: 12px 0
 }
-#login-dp .social-buttons a{
+
+#login-dp .social-buttons a {
     width: 49%;
 }
+
 #login-dp .form-group {
     margin-bottom: 1em;
     margin-top: 1em;
 }
-#login-dp a.link-dp{
+
+#login-dp a.link-dp {
     color: black !important;
 }
-#login-dp input.form-control{
+
+#login-dp input.form-control {
     border: none;
     border-bottom: 1px solid black !important;
     border-color: black !important;
 }
-.btn-fb{
+
+.btn-fb {
     color: #fff !important;
-    background-color:#000000 !important;
-    
+    background-color: #000000 !important;
 }
-.btn-fb:hover{
+
+.btn-fb:hover {
     color: #fff !important;
-    background-color:#3b5998 !important;
+    background-color: #3b5998 !important;
 }
-.btn-tw{
+
+.btn-tw {
     color: #fff !important;
-    background-color:#000000  !important;
+    background-color: #000000 !important;
 }
-.btn-tw:hover{
+
+.btn-tw:hover {
     color: #fff !important;
-    background-color:#55acee !important;
+    background-color: #55acee !important;
 }
-button.login-b{
+
+button.login-b {
     color: white !important;
     background-color: black !important;
     border-color: black !important;
 }
-button.login-b:hover{
+
+button.login-b:hover {
     color: white !important;
     background-color: rgb(10, 10, 10) !important;
 }
-@media(max-width:572px){
-    #login-dp{
+
+@media(max-width:572px) {
+    #login-dp {
         background-color: inherit;
         color: #fff;
     }
-    #login-dp .bottom{
+    #login-dp .bottom {
         background-color: inherit;
-        border-top:0 none;
+        border-top: 0 none;
     }
-    .btn-fb{
+    .btn-fb {
         color: #fff !important;
-        background-color:#3b5998 !important;
+        background-color: #3b5998 !important;
     }
-    .btn-tw{
+    .btn-tw {
         color: #fff !important;
-        background-color:#55acee !important;
+        background-color: #55acee !important;
     }
-    #login-dp a.link-dp{
+    #login-dp a.link-dp {
         color: white !important;
     }
-    button.login-b{
+    button.login-b {
         color: black !important;
         background-color: white !important;
     }
 }
 
 /*user logged in*/
-.webnav .navbar-nav .nav-link > .lnr {
+
+.webnav .navbar-nav .nav-link>.lnr {
     position: relative;
     width: 36px;
     font-size: 24px;
-}
-.webnav .navbar-nav .nav-link > .lnr {
     top: 3px;
     line-height: 12px;
     padding-right: 0.5rem;
 }
-.webnav .navbar-nav .nav-link > .lnr > .badge {
+
+.webnav .navbar-nav .nav-link>.lnr>.badge {
     font-size: 0.75rem;
     position: absolute;
-    right: -10px;
+    right: -5px;
     font-family: sans-serif;
+    top: -13px;
 }
-.webnav .navbar-nav .nav-link > .lnr > .badge {
-    top: -15px;
-}
-@media (min-width: 576px) {
-    .webnav.navbar-expand-sm .navbar-nav .nav-link {
-      text-align: center;
-      display: table-cell;
-      height: 70px;
-      vertical-align: middle;
-      padding-top: 0;
-      padding-bottom: 0;
-    }
-  
-    .webnav.navbar-expand-sm .navbar-nav .nav-link > .lnr {
-      display: block;
-      width: 48px;
-      margin: 2px auto 4px auto;
-      top: 0;
-      line-height: 24px;
-    }
-  
-    .webnav.navbar-expand-sm .navbar-nav .nav-link > .lnr > .badge {
-      top: -7px;
-    }
-}
-  
+
+/*
 @media (min-width: 768px) {
-    .webnav.navbar-expand-md .navbar-nav .nav-link {
-      text-align: center;
-      display: table-cell;
-      height: 70px;
-      vertical-align: middle;
-      padding-top: 0;
-      padding-bottom: 0;
-    }
-  
     .webnav.navbar-expand-md .navbar-nav .nav-link > .lnr {
       display: block;
       width: 48px;
@@ -144,22 +134,12 @@ button.login-b:hover{
       top: 0;
       line-height: 24px;
     }
-  
     .webnav.navbar-expand-md .navbar-nav .nav-link > .lnr > .badge {
       top: -7px;
     }
 }
-  
+ /* 
 @media (min-width: 992px) {
-    .webnav.navbar-expand-lg .navbar-nav .nav-link {
-      text-align: center;
-      display: table-cell;
-      height: 70px;
-      vertical-align: middle;
-      padding-top: 0;
-      padding-bottom: 0;
-    }
-  
     .webnav.navbar-expand-lg .navbar-nav .nav-link > .lnr {
       display: block;
       width: 48px;
@@ -167,22 +147,12 @@ button.login-b:hover{
       top: 0;
       line-height: 24px;
     }
-  
     .webnav.navbar-expand-lg .navbar-nav .nav-link > .lnr > .badge {
-      top: -7px;
+      top: -13px;
     }
 }
   
 @media (min-width: 1200px) {
-    .webnav.navbar-expand-xl .navbar-nav .nav-link {
-      text-align: center;
-      display: table-cell;
-      height: 70px;
-      vertical-align: middle;
-      padding-top: 0;
-      padding-bottom: 0;
-    }
-  
     .webnav.navbar-expand-xl .navbar-nav .nav-link > .lnr {
       display: block;
       width: 48px;
@@ -190,10 +160,37 @@ button.login-b:hover{
       top: 0;
       line-height: 24px;
     }
-  
     .webnav.navbar-expand-xl .navbar-nav .nav-link > .lnr > .badge {
       top: -7px;
     }
+}*/
+/* subrayado menu nav
+.nav-item::after {
+    content: '';
+    display: block;
+    width: 0px;
+    height: 2px;
+    background: #ffffff;
+    transition: 0.2s;
 }
-  
-  
+
+.nav-item:hover::after {
+    width: 100%;
+}
+
+.navbar-dark .navbar-nav .active>.nav-link, .navbar-dark .navbar-nav .nav-link.active, .navbar-dark .navbar-nav .nav-link.show, .navbar-dark .navbar-nav .show>.nav-link, .navbar-dark .navbar-nav .nav-link:focus, .navbar-dark .navbar-nav .nav-link:hover {
+    color: #e0e0e0;
+}
+
+.nav-link {
+    padding: 15px 5px;
+    transition: 0.2s;
+}
+
+.dropdown-item.active, .dropdown-item:active {
+    color: #212529;
+}
+
+.dropdown-item:focus, .dropdown-item:hover {
+    background: #ffffff;
+}*/
