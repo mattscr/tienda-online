@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.urls import reverse
+from django.utils.safestring import mark_safe
 
 # Create your models here.
 
@@ -8,6 +9,7 @@ from django.urls import reverse
 class Marca (models.Model):
     id_marca = models.AutoField(primary_key=True)
     Nombre = models.CharField(max_length=50)
+    Img_marca = models.ImageField(upload_to='img_marca', blank=True)
 
     def __str__(self):
         return self.Nombre
@@ -18,6 +20,7 @@ class Categoria(models.Model):
     Nombre = models.CharField(max_length=15)
     Slug = models.SlugField(max_length=150, unique=True,
                             default=str, db_index=True)
+    Img_categoria = models.ImageField(upload_to='img_categoria', blank=True)
 
     class Meta:
         ordering = ('Nombre', )
@@ -84,6 +87,13 @@ class Producto(models.Model):
     slug = models.SlugField(max_length=150, default=str, db_index=True)
     disponibilidad = models.BooleanField(default=False)
     imagen = models.ImageField(upload_to='img_productos/%Y/%m/%d', blank=True)
+
+    def img_tag(self):
+        if self.imagen:
+            return mark_safe('<img src="%s" style="width: 45px; height:auto;" />' % self.imagen.url)
+        else:
+            return 'Imagen no encontrada'
+        img_tag.short_description = 'Imagen'
 
     class Meta:
         ordering = ('Modelo', )

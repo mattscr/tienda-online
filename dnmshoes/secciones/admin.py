@@ -20,7 +20,7 @@ admin.site.register(Provincia)
 admin.site.register(Localidad)
 
 class ProductoAdmin(admin.ModelAdmin):
-    list_display = ['Modelo', 'Color', 'Stock', 'disponibilidad', 'Precio_Lista']
+    list_display = ['Modelo', 'img_tag', 'Stock', 'disponibilidad', 'Precio_Lista']
     list_filter = ['disponibilidad']
     list_editable = ['Precio_Lista', 'Stock', 'disponibilidad']
     prepopulated_fields = {'slug': ('Modelo',)}
