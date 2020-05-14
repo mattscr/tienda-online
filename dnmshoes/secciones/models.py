@@ -93,7 +93,7 @@ class Producto(models.Model):
             return mark_safe('<img src="%s" style="width: 45px; height:auto;" />' % self.imagen.url)
         else:
             return 'Imagen no encontrada'
-        img_tag.short_description = 'Imagen'
+    img_tag.short_description = 'Imagen'
 
     class Meta:
         ordering = ('Modelo', )
