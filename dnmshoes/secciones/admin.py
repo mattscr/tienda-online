@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Marca, Categoria, Modelo, CategoriaModelo, Provincia, Localidad, Producto, Proveedor, ProductoProveedor, MedioEnvio, Envio, Pago, Compra, NotadePedido
+from .models import Marca, Categoria, Modelo, CategoriaModelo, Provincia, Localidad, Producto, Proveedor, ProductoProveedor, MedioEnvio, Envio, Pago, Compra, NotadePedido, Slide
 
 admin.site.site_header = "BENJAMIN Indumentaria"
 admin.site.site_title  = "Panel de administración"
@@ -26,7 +26,7 @@ class ProductoAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('Modelo',)}
 
 admin.site.register(Producto, ProductoAdmin)
-
+admin.site.register(Slide)
 admin.site.register(Proveedor)
 '''
 admin.site.register(ProductoProveedor)
