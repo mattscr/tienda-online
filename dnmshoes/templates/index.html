@@ -1,56 +1,75 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load slide_template_tags %}
+{% load categoria_template_tags %}
+{% block extra_head %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/estilos.css' %}" >
+<link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+<!--===============================================================================================-->
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static 'vendor/animate/animate.css' %}"
+  />
+  <!--===============================================================================================-->
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static 'vendor/css-hamburgers/hamburgers.min.css' %}"
+  />
+  <!--===============================================================================================-->
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static 'vendor/animsition/css/animsition.min.css' %}"
+  />
+  <!--===============================================================================================-->
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static 'vendor/select2/select2.min.css' %}"
+  />
+  <!--===============================================================================================-->
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static 'vendor/daterangepicker/daterangepicker.css' %}"
+  />
+  <!--===============================================================================================-->
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static 'vendor/slick/slick.css' %}"
+  />
+  <!--===============================================================================================-->
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static 'vendor/lightbox2/css/lightbox.min.css' %}"
+  />
+  <!--===============================================================================================-->
+{% endblock %}
 {% block content %}
 <!--carousel-->
-{% comment %} {% include 'secciones/carousel.html' %} {% endcomment %}
-<!--categorias-->
+
+<section class="slide1">
+		<div class="wrap-slick1">
+			<div class="slick1">
+			{% slides %}
+			</div>
+		</div>
+</section>
+
+ <!--categorias-->
 <section class="p-40"> 
-	{% comment %} <div class="container">
-		<div class="row">               
-			<div class="col-sm-10 col-md-8 col-lg-4 m-l-r-auto">                    
-				<div class="block1 hov-img-zoom pos-relative m-b-30">
-					<img src="" alt="IMG-BENNER">
-					<div class="block1-wrapbtn w-size2">
-						<a href="#" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">accesorios </a>
-					</div>
-				</div>                    
-			</div>                
-			<div class="col-sm-10 col-md-8 col-lg-4 m-l-r-auto">    
-				<div class="block1 hov-img-zoom pos-relative m-b-30">
-					<img src="https://cdn.shopify.com/s/files/1/1104/4168/products/Allbirds_M_Wool_Runner_Kotare_GREY_ANGLE_d5ff3b96-7251-4c1e-9ba8-c711434cc10d_900x900.png?v=1571655678" alt="IMG-BENNER">
-					<div class="block1-wrapbtn w-size2">
-						<a href="#" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">zapatillas </a>
-					</div>
-				</div>
-			</div>
-			<div class="col-sm-10 col-md-8 col-lg-4 m-l-r-auto">    
-				<div class="block1 hov-img-zoom pos-relative m-b-30">
-					<img src="https://d26lpennugtm8s.cloudfront.net/stores/020/949/products/anteojos-de-sol-de-madera-salento-caoba-11-c7bc15ea9d2343c50715636578024486-480-0.png	" alt="IMG-BENNER">
-					<div class="block1-wrapbtn w-size2">
-						<a href="#" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">anteojos </a>
-					</div>
-				</div>
-			</div>
-			<div class="col-sm-10 col-md-8 col-lg-4 m-l-r-auto">    
-				<div class="block1 hov-img-zoom pos-relative m-b-30">
-					<img src="https://woker.vteximg.com.br/arquivos/ids/171316-1000-1000/ED7123_APP_photo_front-center_white.jpg?v=637014104407000000" alt="IMG-BENNER">
-					<div class="block1-wrapbtn w-size2">
-						<a href="#" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">buzos</a>
-					</div>
-				</div>
-			</div>
-			<div class="col-sm-10 col-md-8 col-lg-4 m-l-r-auto">    
-				<div class="block1 hov-img-zoom pos-relative m-b-30">
-					<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRS1cs5iu296p5fqDWZVmz2XNlF9mdFcfzSTiOgMp_VVQjbmDFm&usqp=CAU" alt="IMG-BENNER">
-					<div class="block1-wrapbtn w-size2">
-						<a href="#" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">Sunglasses </a>
-					</div>
-				</div>
-			</div>
-		</div>            
-	</div> {% endcomment %}
+	<div class="container">			
+		<div class="d-flex flex-row justify-content-start">
+			{% categorias_div %}
+		</div>
+	</div>
 	
-	<div class="container">
+	
+	{% comment %} <div class="container">
 		<div class="row">
 			<div class="col-sm-6 col-md-3 col-lg-3 d-inline-block">    
 			<div class="block1 hov-img-zoom pos-relative m-b-30">
@@ -102,7 +121,7 @@
 			</div>
 			</div>
 		</div>
-	</div>
+	</div> {% endcomment %}
 
 
 	
@@ -242,3 +261,10 @@
 
 
 {% endblock content %}
+
+{% block extra_script %}
+
+<script type="text/javascript" src="{% static 'vendor/slick/slick.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/slick-custom.js' %}"></script>
+
+{% endblock extra_script %}

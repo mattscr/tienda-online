@@ -6,7 +6,7 @@
 }
 </style>
  <!--nav-bar-->
-<nav class="navbar webnav navbar-expand-lg fixed-top  navbar-dark bg-dark">
+<nav class="navbar webnav navbar-expand-lg navbar-dark bg-dark">
 
   <a class="navbar-brand" href="{% url 'secciones:home' %}"><img src="{% static 'img/logo.svg' %}" class="logonav" alt="logo"></a>
 
@@ -63,8 +63,8 @@
               <div class="row">
                   <div class="col-lg-12">
                     <div class="social-buttons">
-                      <a href="#" class="btn btn-fb"><i class="fa fa-facebook"></i> Facebook</a>
-                      <a href="#" class="btn btn-tw"><i class="fa fa-twitter"></i> Twitter</a>
+                      <a href="#" class="btn btn-fb"><i class="fab fa-facebook-f"></i> Facebook</a>
+                      <a href="#" class="btn btn-tw"><i class="fab fa-twitter"></i> Twitter</a>
                     </div>
                       <hr>
                       <form class="login" role="form" method="POST" action="{% url 'account_login' %}" accept-charset="UTF-8" id="login-nav">
