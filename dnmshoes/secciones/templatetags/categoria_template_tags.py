@@ -7,7 +7,7 @@ register = template.Library()
 
 @register.simple_tag
 def categoria():
-    items = Categoria.objects.all()
+    items = Categoria.objects.filter(is_active=True)
     items_li = ""
     for i in items:
         items_li += """<li class="nav-item"><a class="nav-link" href="/{}/">{}</a></li>""".format(
